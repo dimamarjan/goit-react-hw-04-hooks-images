@@ -41,6 +41,9 @@ function App() {
 			} else {
 				setData(resp);
 				setStatus("resolved");
+				if (resp.length === 12) {
+					setShowButtonLoadMore(true);
+				};
 			};
 		});
 	};
@@ -76,6 +79,9 @@ function App() {
 						top: document.documentElement.scrollHeight,
 						behavior: 'smooth',
 					});
+					if (resp.length === 12) {
+						setShowButtonLoadMore(true);
+					};
 				};
 			});
 		};
@@ -97,7 +103,6 @@ function App() {
 				setShowNoDataFound(false);
 				setShowSpinner(false);
 				setShowGallery(true);
-				setShowButtonLoadMore(true);
 				break;
 			case "pending":
 				setShowNoDataFound(false);
